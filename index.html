@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>see</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="innerDiv">
+        <div>
+          <div class="iconTaker">
+            <img src="star.png" alt="loading" />
+          </div>
+        </div>
+        <div>
+          <div class="howDid">How Did We Do?</div>
+          <div class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur, temporibus, aliquid ipsa, rem obcaecati vitae at
+            voluptates laborum dolorem illo earum asperiores.
+          </div>
+        </div>
+        <div class="links">
+          <button class="iconTaker">1</button>
+          <button class="iconTaker">2</button>
+          <button class="iconTaker">3</button>
+          <button class="iconTaker">4</button>
+          <button class="iconTaker">5</button>
+        </div>
+        <button class="submit">SUBMIT</button>
+      </div>
+    </div>
+    <script>
+      const allRange = Array.from(document.querySelectorAll(".links>button"));
+      let index = 1;
+      allRange.forEach((v, i) => {
+        v.addEventListener("click", (e) => {
+          allRange.forEach((v, i) => {
+            v.setAttribute("class", "iconTaker");
+          });
+          e.target.setAttribute("class", "select iconTaker");
+          index = i + 1;
+        });
+      });
+      const button = document.querySelector(".submit");
+      button.addEventListener("click", (e) => {
+        location.assign(`two.html?${index}`);
+      });
+    </script>
+  </body>
+</html>
